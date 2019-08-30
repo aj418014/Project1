@@ -19,11 +19,11 @@ public class Movement : MonoBehaviour
         RotateObject();
         if (Input.GetMouseButtonDown(0))
             Cursor.lockState = CursorLockMode.Locked;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             flameThrower.Play();
         }
-        if(Input.GetKeyUp(KeyCode.Space))
+        if(Input.GetMouseButtonUp(0))
         {
             flameThrower.Stop();
         }
