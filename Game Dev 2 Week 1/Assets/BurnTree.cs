@@ -14,6 +14,7 @@ public class BurnTree : MonoBehaviour
             print("AHHHHHHHHH");
             burningParticles[i].gameObject.SetActive(true);
             i++;
+            GameObject.Find("Player").GetComponent<Money>().AddFunds(10);
         }
     }
 }
