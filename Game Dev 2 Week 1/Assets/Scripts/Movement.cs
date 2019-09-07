@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     float speed = 5.0f;
     public float sensitivity = 10f;
     private Vector2 currentRotation;
-    public GameObject player;
+
     public ParticleSystem flameThrower;
     private void Start()
     {
