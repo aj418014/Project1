@@ -1,21 +1,22 @@
 fileFormatVersion: 2
-guid: ce584de172eff442ab42ab43aef23c44
+guid: b2c4ba3e12c964227bd1e66cb8b421ba
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: left
+    100000: //RootNode
     100002: pCube1
-    100004: //RootNode
-    400000: left
+    400000: //RootNode
     400002: pCube1
-    400004: //RootNode
-    2000000: left
-    2100000: Gun
-    2100002: lambert1
+    2100000: pCube1Mat
     2300000: pCube1
     3300000: pCube1
     4300000: pCube1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCube1Mat
+    second: {fileID: 2100000, guid: d93337d768d97472ca9e0b9fcebd54f6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -46,7 +47,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
