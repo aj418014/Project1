@@ -18,7 +18,22 @@ ModelImporter:
     3300002: Tree 1
     4300000: Tree
     4300002: Leaves
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyes_and_mouth
+    second: {fileID: 2100000, guid: 61b15ed4f47bc46b5847b13c7d84288f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves1
+    second: {fileID: 2100000, guid: 1b692475b69cf4b3185e9ee3c300266f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree1
+    second: {fileID: 2100000, guid: b5285cb25c2d44d9ea0c2f8553b3ddf2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -49,7 +64,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.01
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
