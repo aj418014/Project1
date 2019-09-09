@@ -1947,7 +1947,7 @@ public class TerrainToolkit : MonoBehaviour {
 				newTerrainLayers[i] = new TerrainLayer();
 				
 				// Generate asset
-				AssetDatabase.CreateAsset(newTerrainLayers[i], assetPath + TERRAIN_LAYER_PREFIX + i + TERRAIN_LAYER_EXTENSION );
+//				AssetDatabase.CreateAsset(newTerrainLayers[i], assetPath + TERRAIN_LAYER_PREFIX + i + TERRAIN_LAYER_EXTENSION );
 			
 				// Assign values
 				newTerrainLayers[i].diffuseTexture = tex;
@@ -2003,7 +2003,7 @@ public class TerrainToolkit : MonoBehaviour {
 		int n = 0;
 		
 		// Delete the asset corresponding to removed index
-		AssetDatabase.DeleteAsset( assetPath + TERRAIN_LAYER_PREFIX + index + TERRAIN_LAYER_EXTENSION );
+		//AssetDatabase.DeleteAsset( assetPath + TERRAIN_LAYER_PREFIX + index + TERRAIN_LAYER_EXTENSION );
 		terrainLayers[index] = null; 
 		
 		// For each layer in the old repository
@@ -2019,10 +2019,10 @@ public class TerrainToolkit : MonoBehaviour {
 				if( i!=n ){
 					
 					// Rename asset to new index
-					AssetDatabase.RenameAsset(
+/*					AssetDatabase.RenameAsset(
 						assetPath + TERRAIN_LAYER_PREFIX + i + TERRAIN_LAYER_EXTENSION,
 						TERRAIN_LAYER_PREFIX + n + TERRAIN_LAYER_EXTENSION
-					);
+					);*/
 					
 				}
 				
@@ -2060,7 +2060,7 @@ public class TerrainToolkit : MonoBehaviour {
 		for(int i=0;i<terrainLayers.Length;i++){
 		
 			// Delete the asset corresponding to removed index
-			AssetDatabase.DeleteAsset( assetPath + TERRAIN_LAYER_PREFIX + i + TERRAIN_LAYER_EXTENSION );
+///			AssetDatabase.DeleteAsset( assetPath + TERRAIN_LAYER_PREFIX + i + TERRAIN_LAYER_EXTENSION );
 			terrainLayers[i] = null; 
 			
 		}

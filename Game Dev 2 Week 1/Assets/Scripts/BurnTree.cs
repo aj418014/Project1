@@ -31,7 +31,7 @@ public class BurnTree : MonoBehaviour
             if (timer < 1) 
             if (timer < 0)
             {
-                gameObject.SetActive(false);
+                    Destroy(this);
             }
         }
     }
