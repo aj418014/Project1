@@ -17,17 +17,17 @@ public class Movement : MonoBehaviour
     {
         Move();
         RotateObject();
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
             Cursor.lockState = CursorLockMode.Locked;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             flameThrower.Play();
         }
-        if(Input.GetMouseButtonUp(0))
+        if(Input.GetMouseButtonUp(1))
         {
             flameThrower.Stop();
         }
-        print(flameThrower.isPlaying);
+
     }
     private void Move()
     {
