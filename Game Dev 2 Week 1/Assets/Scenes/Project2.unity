@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.496413, b: 0.5748175, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5901,7 +5901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787684918}
   m_LocalRotation: {x: 0.026031375, y: 0.65545017, z: -0.022615483, w: 0.7544508}
-  m_LocalPosition: {x: 1.658, y: 1.691, z: 0.235}
+  m_LocalPosition: {x: 1.733, y: 1.688, z: -0.007}
   m_LocalScale: {x: 0.34982002, y: 0.34982005, z: 0.34982008}
   m_Children: []
   m_Father: {fileID: 1807225602}
@@ -5983,7 +5983,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 1

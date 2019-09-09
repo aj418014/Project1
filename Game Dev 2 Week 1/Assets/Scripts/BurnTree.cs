@@ -39,7 +39,6 @@ public class BurnTree : MonoBehaviour
     void DealDamage(float damageValue)
     {
         CurrentHealth -= damageValue;
-        Debug.Log(CurrentHealth);
         if (CurrentHealth <= 0 && Dead == false)
         {
             Die();
@@ -51,9 +50,9 @@ public class BurnTree : MonoBehaviour
     {
         CurrentHealth = 0;
         GameObject.Find("Player").GetComponent<Money>().AddFunds(100);
-        Debug.Log("you dead");
-        for(int i = 0; i < transform.childCount; i++)
-        transform.GetChild(i).GetComponent<Animator>().SetBool("IsDead", true);
+        burningParticles[i].gameObject.SetActive(true);
+        for(int k = 0; k < transform.childCount; k++)
+        transform.GetChild(k).GetComponent<Animator>().SetBool("IsDead", true);
         //transform.GetChild(1).GetComponent<Animator>().SetBool("IsDead", true);
     }
 
@@ -61,11 +60,8 @@ public class BurnTree : MonoBehaviour
     {
         DealDamage(10f);
         differenceInHealth = (MaxHealth - ((((float)i + 1) / burningParticles.Length) * MaxHealth));
-        print(burningParticles.Length);
-        print("difference in health " + differenceInHealth);
         if (CurrentHealth < differenceInHealth && CurrentHealth > 0)
         {
-            print("AHHHHHHHHH");
             burningParticles[i].gameObject.SetActive(true);
             i++;
             GameObject.Find("Player").GetComponent<Money>().AddFunds(10);
