@@ -9,8 +9,10 @@ public class BurnTree : MonoBehaviour
     float differenceInHealth;
     public ParticleSystem[] burningParticles;
     int i = 0;
-
-
+    bool Dead = false;
+    float timer = 2.85f;
+    public GameObject leaves;
+    public GameObject tree;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,37 +25,43 @@ public class BurnTree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(Dead == true)
+        {
+            timer -= Time.deltaTime;
+            if (timer < 1) 
+            if (timer < 0)
+            {
+                    Destroy(this);
+            }
+        }
     }
 
     void DealDamage(float damageValue)
     {
         CurrentHealth -= damageValue;
-        Debug.Log(CurrentHealth);
-        if (CurrentHealth <= 0)
+        if (CurrentHealth <= 0 && Dead == false)
+        {
             Die();
+            Dead = true;
+        }
     }
 
     void Die()
     {
         CurrentHealth = 0;
         GameObject.Find("Player").GetComponent<Money>().AddFunds(100);
-        Debug.Log("you dead");
-        transform.GetChild(0).GetComponent<Animator>().SetBool("IsDead", true);
-        transform.GetChild(1).GetComponent<Animator>().SetBool("IsDead", true);
-
-        //gameObject.SetActive(false);
+        burningParticles[i].gameObject.SetActive(true);
+        for(int k = 0; k < transform.childCount; k++)
+        transform.GetChild(k).GetComponent<Animator>().SetBool("IsDead", true);
+        //transform.GetChild(1).GetComponent<Animator>().SetBool("IsDead", true);
     }
 
     private void OnParticleCollision(GameObject other)
     {
         DealDamage(10f);
         differenceInHealth = (MaxHealth - ((((float)i + 1) / burningParticles.Length) * MaxHealth));
-        print(burningParticles.Length);
-        print("difference in health " + differenceInHealth);
-        if (CurrentHealth < differenceInHealth)
+        if (CurrentHealth < differenceInHealth && CurrentHealth > 0)
         {
-            print("AHHHHHHHHH");
             burningParticles[i].gameObject.SetActive(true);
             i++;
             GameObject.Find("Player").GetComponent<Money>().AddFunds(10);
@@ -61,6 +69,7 @@ public class BurnTree : MonoBehaviour
 
 
     }
+
 
 }
 
