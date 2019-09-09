@@ -7,7 +7,7 @@ public class Pistol : MonoBehaviour
 
     public Camera fpsCam;
     public ParticleSystem pew;
-
+    public AudioSource bang;
     // Update is called once per frame
     void Update()
     {
@@ -20,7 +20,7 @@ public class Pistol : MonoBehaviour
     void Shoot()
     {
         pew.Play();
-
+        bang.Play();
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {

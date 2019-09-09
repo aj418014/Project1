@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
@@ -23,11 +23,26 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+        if(GameIsPaused == true)
+        {
+            if(Input.GetKeyDown(KeyCode.M))
+            {
+                SceneManager.LoadScene(0);
+            }
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                print("Quit");
+                Application.Quit();
+            }
+        }
     }
 
 
     void Resume ()
     {
+        GameObject.Find("Player").GetComponent<Movement>().enabled = true;
+        GameObject.Find("Main Camera").GetComponent<CameraPointer>().enabled = true;
+        GameObject.Find("Pistol").GetComponent<Pistol>().enabled = true;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -36,6 +51,9 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        GameObject.Find("Player").GetComponent<Movement>().enabled = false;
+        GameObject.Find("Main Camera").GetComponent<CameraPointer>().enabled = false;
+        GameObject.Find("Pistol").GetComponent<Pistol>().enabled = false;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
