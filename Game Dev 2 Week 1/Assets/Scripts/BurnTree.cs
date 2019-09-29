@@ -10,7 +10,7 @@ public class BurnTree : MonoBehaviour
     public ParticleSystem[] burningParticles;
     int i = 0;
     bool Dead = false;
-    float timer = 2.85f;
+    float timer = 2.5f;
     public GameObject leaves;
     public GameObject tree;
     // Start is called before the first frame update
@@ -28,10 +28,10 @@ public class BurnTree : MonoBehaviour
         if(Dead == true)
         {
             timer -= Time.deltaTime;
-            if (timer < 1) 
+            
             if (timer < 0)
             {
-                    Destroy(this);
+                    Destroy(gameObject);
             }
         }
     }

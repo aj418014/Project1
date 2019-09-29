@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     float speed = 5.0f;
     public float sensitivity = 10f;
     private Vector2 currentRotation;
-
+    public AudioSource flamethrowerSound;
     public ParticleSystem flameThrower;
     private void Start()
     {
@@ -21,10 +21,12 @@ public class Movement : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         if (Input.GetMouseButtonDown(1))
         {
+            flamethrowerSound.Play();
             flameThrower.Play();
         }
         if(Input.GetMouseButtonUp(1))
         {
+            flamethrowerSound.Stop();
             flameThrower.Stop();
         }
 
